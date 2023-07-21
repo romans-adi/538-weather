@@ -1,5 +1,5 @@
 <template>
-  <div class="about-page flex flex-1 bg-cover bg-bottom" :class="getBackgroundClass()">
+  <div class="about-page flex flex-1 bg-cover bg-bottom min-h-screen" :class="getBackgroundClass()">
     <div class="bg-slate-200 container-opaque">
       <div class="mx-auto flex flex-col p-20 font-semibold">
     <h2 class="text-3xl font-bold mb-4 opacity-100">About This App</h2>
