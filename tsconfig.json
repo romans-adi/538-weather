@@ -6,7 +6,10 @@
     "module": "ESNext",
     "types": ["node", "vue", "vite/client", "vue-router"],
     "moduleResolution": "node",
-    "target": "es2018"
+    "target": "es2018",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "lib": ["es2018", "dom"],
   },
   "references": [
     {
@@ -22,6 +25,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "shims-vue.d.ts",
-    "vite.config.*"
+    "vite.config.*",
+    "src/stores/weatherStore.ts"
   ]
 }
