@@ -1,68 +1,62 @@
-# 583-weather
+<a name="readme-top"></a>
 
-This template should help get you started developing with Vue 3 in Vite.
+<!-- TABLE OF CONTENTS -->
 
-## Recommended IDE Setup
+# 📗 Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 513 weather](#513-weather)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+  - [👥 Authors ](#-authors-)
+    - [Future Features ](#future-features-)
+  - [⭐️ Show your support ](#️-show-your-support-)
 
-## Type Support for `.vue` Imports in TS
+<!-- PROJECT DESCRIPTION -->
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+# 📖 <a name="about-project">To Do List</a>
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Simple single-page application (SPA) that uses an open-source API to display real-time weather data for a specific location.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## 🛠 Built With <a name="built-with"></a>
 
-## Customize configuration
+### Tech Stack <a name="tech-stack"></a>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+  <ul>
+    <li>HTML</a></li>
+   <li>Tailwind CSS</a></li>
+   <li>TypeScript</li>
+   <li>Vue.js</li>
+  </ul>
 
-## Project Setup
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```sh
-npm install
-```
+<!-- AUTHORS -->
 
-### Compile and Hot-Reload for Development
+## 👥 Authors <a name="authors"></a>
 
-```sh
-npm run dev
-```
+👤 **Romans S.**
 
-### Type-Check, Compile and Minify for Production
+- GitHub: [@romans-adi](https://github.com/romans-adi/)
+- Twitter: [@obj583](https://twitter.com/obj583/)
+- LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
-```sh
-npm run build
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+<!-- Future Features -->
 
-```sh
-npm run test:unit
-```
+### Future Updated <a name="future-features"></a>
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+- [ ] Add pinia store to store fetched data
+- [ ] Fix styles (improve weak contrast)
 
-```sh
-npm run test:e2e:dev
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+<!-- SUPPORT -->
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+## ⭐️ Show your support <a name="support"></a>
 
-```sh
-npm run build
-npm run test:e2e
-```
+To show your support, you can star this project. I would also appreciate any commentaries.
+Additionally, you can contact me reaching me by any link mentioned in the section <a href="#authors">Authors</a>.
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
