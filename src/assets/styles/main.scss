@@ -1,3 +1,178 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.h-full {
+  height: 100vh;
+}
+
+.temp-block img {
+  margin: -20px;
+}
+
+.black-hr {
+  background-color: black;
+}
+
+.container-opaque {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  font-family: 'montserrat', sans-serif;
+}
+#wrapper {
+  background-image: url('../img/default-bg.webp');
+  transition: 0.6s;
+}
+#wrapper.clear {
+  background-image: url('../img/clear-bg.webp');
+}
+#wrapper.clouds {
+  background-image: url('../img/cloudy-bg.webp');
+}
+#wrapper.drizzle {
+  background-image: url('../img/drizzle-bg.webp');
+}
+#app.rain {
+  background-image: url('../img/rain-bg.webp');
+}
+#wrapper.thunderstorm {
+  background-image: url('../img/thunder-bg.webp');
+}
+#wrapper.mist {
+  background-image: url('../img/mist-bg.webp');
+}
+#wrapper.snow {
+  background-image: url('../img/snow-bg.webp');
+}
+
+#wrapper.clear {
+  background-image: url('../img/clear-bg.webp');
+}
+#wrapper.clouds,
+.bg-day  {
+  background-image: url('../img/cloudy-bg.webp');
+}
+#wrapper.drizzle {
+  background-image: url('../img/drizzle-bg.webp');
+}
+#wrapper.rain {
+  background-image: url('../img/rain-bg.webp');
+}
+#wrapper.thunderstorm {
+  background-image: url('../img/thunder-bg.webp');
+}
+#wrapper.mist {
+  background-image: url('../img/mist-bg.webp');
+}
+#wrapper.snow {
+  background-image: url('../img/snow-bg.webp');
+}
+
+#wrapper-night {
+  background-image: url('../img/default-bg-night.webp');
+  transition: 0.6s;
+}
+#wrapper-night.clear {
+  background-image: url('../img/clear-bg-night.webp');
+}
+#wrapper-night.clouds {
+  background-image: url('../img/cloudy-bg-night.webp');
+}
+#wrapper-night.drizzle {
+  background-image: url('../img/drizzle-bg-night.webp');
+}
+#wrapper-night.rain {
+  background-image: url('../img/rain-bg-night.webp');
+}
+#wrapper-night.thunderstorm {
+  background-image: url('../img/thunder-bg-night.webp');
+}
+#wrapper-night.mist {
+  background-image: url('../img/mist-bg-night.webp');
+}
+#wrapper-night.snow,
+.bg-night  {
+  background-image: url('../img/snow-bg-night.webp');
+}
+
+#wrapper-night.clear {
+  background-image: url('../img/clear-bg-night.webp');
+}
+#wrapper-night.clouds {
+  background-image: url('../img/cloudy-bg-night.webp');
+}
+#wrapper-night.drizzle {
+  background-image: url('../img/drizzle-bg-night.webp');
+}
+#wrapper-night.rain {
+  background-image: url('../img/rain-bg-night.webp');
+}
+#wrapper-night.thunderstorm {
+  background-image: url('../img/thunder-bg-night.webp');
+}
+#wrapper-night.mist {
+  background-image: url('../img/mist-bg-night.webp');
+}
+#wrapper-night.snow {
+  background-image: url('../img/snow-bg-night.webp');
+}
+
+main {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+}
+
+.search-box .search-bar {
+  transition: 0.6s;
+  background: none;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: clamp(18px, 1vw, 77px);
+}
+
+.search-box .search-bar:focus {
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 16px 0px 16px 0px;
+}
+.location-box .location {
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+  font-size: clamp(18px, 2vw, 77px);
+}
+
+.weather-box .temp {
+  background-color:rgba(255, 255, 255, 0.25);
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.weather-box .temp-block {
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.weather-box .temp-min, .weather-box .temp-max {
+  text-shadow: 1.5px 3px rgba(0, 0, 0, 0.25);
+  background-color:rgba(255, 255, 255, 0.25);
+  box-shadow: 1.5px 3px rgba(0, 0, 0, 0.25);
+  font-size: clamp(18px, 1vw, 77px);
+
+}
+
+.weather-box .weather .weather-main, .weather-box .temp-block {
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  font-size: clamp(18px, 2vw, 77px);
+}
+
+.location-box .date, .weather-box .weather-desc {
+  font-size: clamp(12px, 1vw, 44px);
+}
+
+.humidity, .visibility, .wind, .cloudiness {
+  background-color:rgba(0, 0, 0, 0.5);
+}
