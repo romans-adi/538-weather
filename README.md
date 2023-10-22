@@ -143,6 +143,7 @@ http://localhost:3000
 
 ## 🌟 Future Features <a name="future-features"></a>
 
+- [ ] Add Navigation Bar
 - [ ] Geolocation: to automatically detect the user's current location and fetch weather data accordingly.
 - [ ] Weather Alerts: Enable weather alerts and notifications for severe weather conditions in the user's area.
 - [ ] Multiple Locations: Allow users to save and switch between multiple locations, perfect for travelers.
