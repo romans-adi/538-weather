@@ -1,14 +1,38 @@
 <template>
   <div :id="hour" class="bg-cover bg-top flex-1 bg-opacity-70 absolute h-full w-full z-[-1]" :class="getWeatherClass()"> </div>
-    <div class="search-box w-full pt-8 mb-8 flex justify-center z-40">
+  <div class="search-box w-5/12 items-center justify-center pt-8 mb-8 flex mx-auto z-40 relative">
+    <div class="flex w-full flex-col">
       <input
         type="text"
-        class="search-bar block p-4 text-xl border-none outline-none appearance-none text-sky-900 placeholder:text-gray-500 placeholder:tracking-wide rounded-tr-2xl rounded-bl-2xl"
+        class="flex-1 p-4 text-xl border-none outline-none appearance-none text-sky-900 placeholder:text-gray-500 placeholder:tracking-wide rounded-tr-2xl rounded-bl-2xl"
         placeholder="Type your place..."
         v-model="query"
-        @keypress="fetchWeather"
+        @keydown.enter="handleEnter"
+        @keydown.down.prevent="navigateResults('down')"
+        @keydown.up.prevent="navigateResults('up')"
+        @keydown.left.prevent="navigateResults(1)"
+        @keydown.right.prevent="navigateResults(-1)"
+        :class="{ 'focused': index === focusedResultIndex }"
       />
+      <div
+        v-if="searchResults.length > 0"
+        class="text-center flex search-results bg-white bg-opacity-40 shadow-md mt-2 z-10"
+        @mousedown="preventBlur"
+      >
+        <span
+        v-for="(result, index) in searchResults"
+        :key="index"
+        @click="selectResult(result)"
+        @mouseover="focusResult(index)"
+        :class="{ 'bg-gray-100': index === focusedResultIndex, 'text-black font-semibold': index === focusedResultIndex }"
+        class="p-4 flex flex-col flex-1 text-white hover:text-black active:text-black focus:text-black cursor-pointer"
+        tabindex="0"
+        >
+          {{ result.name }}
+        </span>
+      </div>
     </div>
+  </div>
     <div class="weather-wrap z-40 flex flex-1 justify-center flex-col" v-if="typeof weather.main != 'undefined'">
       <div>
         <div class="location text-white text-4xl font-medium text-center mb-3">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -88,19 +112,37 @@ export default {
       api_key: 'e0a656d67fafac879c5358ea14956d1d',
       url_base: 'https://api.openweathermap.org/data/2.5/',
       query: '',
-      weather: {}
+      weather: {},
+      searchResults: [],
+      focusedResultIndex: -1,
     };
   },
-  methods: {
-    fetchWeather(e) {
-      if (e.key === 'Enter') {
-        fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
-          .then(res => res.json())
-          .then(this.setResults);
+  watch: {
+    query: function (newQuery) {
+      if (newQuery.length >= 1) {
+        fetch(`${this.url_base}find?q=${newQuery}&type=like&units=metric&APPID=${this.api_key}`)
+          .then((res) => res.json())
+          .then(this.setSearchResults);
+      } else {
+        this.searchResults = [];
       }
+    },
+  },
+  methods: {
+    fetchWeather() {
+  fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
+    .then(res => res.json())
+    .then(this.setResults);
+},
+    handleEnter() {
+      this.searchResults = [];
+      this.fetchWeather();
     },
     setResults(results) {
       this.weather = results;
+    },
+    setSearchResults(results) {
+      this.searchResults = results.list || [];
     },
     momentNow() {
       return moment().format('LLLL');
@@ -130,7 +172,29 @@ export default {
       } else {
         return {};
       }
+    },
+  preventBlur(event) {
+      event.preventDefault();
+    },
+  navigateResults(direction) {
+    if (direction === 'up') {
+      if (this.focusedResultIndex > 0) {
+        this.focusedResultIndex--;
+      }
+    } else if (direction === 'down') {
+      if (this.focusedResultIndex < this.searchResults.length - 1) {
+        this.focusedResultIndex++;
+      }
     }
+  },
+  selectResult(result) {
+    this.query = result.name;
+    this.searchResults = [];
+    this.fetchWeather();
+  },
+  focusResult(index) {
+    this.focusedResultIndex = index;
+  },
   },
   mounted() {
     this.getNow();
